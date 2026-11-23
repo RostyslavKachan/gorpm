@@ -27,13 +27,13 @@ const (
 	RPMTAG_SIGSIZE           = RpmTag(C.RPMTAG_SIGSIZE)           // i
 	RPMTAG_SIGPGP            = RpmTag(C.RPMTAG_SIGPGP)            // x
 	RPMTAG_SIGMD5            = RpmTag(C.RPMTAG_SIGMD5)            // x
-	RPMTAG_PKGID             = RpmTag(C.RPMTAG_PKGID)             // x
+	RPMTAG_PKGID             = RPMTAG_SIGMD5                      // was C.RPMTAG_PKGID (removed in rpm 6.0)
 	RPMTAG_SIGGPG            = RpmTag(C.RPMTAG_SIGGPG)            // x
 	RPMTAG_PUBKEYS           = RpmTag(C.RPMTAG_PUBKEYS)           // s[]
 	RPMTAG_DSAHEADER         = RpmTag(C.RPMTAG_DSAHEADER)         // x
 	RPMTAG_RSAHEADER         = RpmTag(C.RPMTAG_RSAHEADER)         // x
 	RPMTAG_SHA1HEADER        = RpmTag(C.RPMTAG_SHA1HEADER)        // s
-	RPMTAG_HDRID             = RpmTag(C.RPMTAG_HDRID)             // s
+	RPMTAG_HDRID             = RPMTAG_SHA1HEADER                  // was C.RPMTAG_HDRID (removed in rpm 6.0)
 	RPMTAG_LONGSIGSIZE       = RpmTag(C.RPMTAG_LONGSIGSIZE)       // l
 	RPMTAG_LONGARCHIVESIZE   = RpmTag(C.RPMTAG_LONGARCHIVESIZE)   // l
 	RPMTAG_NAME              = RpmTag(C.RPMTAG_NAME)              // s
@@ -153,7 +153,7 @@ const (
 	RPMTAG_FILEDEPENDSX      = RpmTag(C.RPMTAG_FILEDEPENDSX)      // i[]
 	RPMTAG_FILEDEPENDSN      = RpmTag(C.RPMTAG_FILEDEPENDSN)      // i[]
 	RPMTAG_DEPENDSDICT       = RpmTag(C.RPMTAG_DEPENDSDICT)       // i[]
-	RPMTAG_SOURCEPKGID       = RpmTag(C.RPMTAG_SOURCEPKGID)       // x
+	RPMTAG_SOURCEPKGID       = RpmTag(1146)                       // was C.RPMTAG_SOURCEPKGID (renamed RPMTAG_SOURCESIGMD5 in rpm 6.0)
 	RPMTAG_FSCONTEXTS        = RpmTag(C.RPMTAG_FSCONTEXTS)        // s[] extension
 	RPMTAG_RECONTEXTS        = RpmTag(C.RPMTAG_RECONTEXTS)        // s[] extension
 	// s[] selinux *.te policy file
